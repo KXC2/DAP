@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dial And Pay</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4);
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+    }
+    .button-box {
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      display: flex;
+      gap: 20px;
+      animation: floaty 3s ease-in-out infinite;
+    }
+    .button-box button {
+      padding: 15px 25px;
+      border: none;
+      border-radius: 12px;
+      background: linear-gradient(45deg, #6a11cb, #2575fc);
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .button-box button:hover {
+      transform: scale(1.1) rotate(-2deg);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+    }
+    @keyframes floaty {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="button-box">
+    <button onclick="window.location.href='register'">Register</button>
+    <button onclick="window.location.href='deposit'">Deposit</button>
+    <button onclick="window.location.href='view_journal'">View Journal</button>
+  </div>
+</body>
+</html>

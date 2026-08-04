@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .form-box {
+      background: #fff;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+      width: 380px;
+      animation: floaty 3s ease-in-out infinite;
+    }
+    .form-box h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #333;
+    }
+    .form-box label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+    .form-box input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      transition: border-color 0.3s;
+    }
+    .form-box input:focus {
+      border-color: #2575fc;
+    }
+    .banks-box {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 20px;
+      background: #f9f9f9;
+    }
+    .banks-box strong {
+      display: block;
+      margin-bottom: 10px;
+      color: #444;
+    }
+    .banks-box label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: normal;
+    }
+    .form-box button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      background: linear-gradient(45deg, #6a11cb, #2575fc);
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .form-box button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+    }
+    @keyframes floaty {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="form-box">
+    <h2>Register</h2>
+    <form method="post">
+  {% csrf_token %}
+
+  <label for="id_name">Name</label>
+  {{ form.name }}
+
+  <label for="id_surname">Surname</label>
+  {{ form.surname }}
+
+  <label for="id_cellphone">Cell Phone</label>
+  {{ form.cellphone }}
+
+  <div class="banks-box">
+    <strong>Select Banks:</strong>
+    {{ form.banks }}
+  </div>
+
+  <button type="submit">Submit</button>
+</form>
+
+  </div>
+</body>
+</html>
